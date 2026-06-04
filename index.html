@@ -61,7 +61,6 @@
 
 <body>
 
-    <!-- 🌐 Circle Area Calculator -->
     <h1>Circle Area Calculator</h1>
 
     <input type="number" id="radius" placeholder="Enter Radius">
@@ -70,7 +69,6 @@
 
     <p id="result"></p>
 
-    <!-- ➕ Simple Calculator -->
     <div class="box">
         <h1>Simple Calculator</h1>
 
@@ -88,7 +86,6 @@
     </div>
 
     <script>
-        // Circle calculator
         function calculateCircle() {
             let r = Number(document.getElementById("radius").value);
             let area = Math.PI * r * r;
@@ -97,7 +94,6 @@
                 "Area = " + area.toFixed(2);
         }
 
-        // Calculator helper
         function getValues() {
             let a = Number(document.getElementById("num1").value);
             let b = Number(document.getElementById("num2").value);
