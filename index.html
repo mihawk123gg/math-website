@@ -57,7 +57,6 @@
             margin-top: 40px;
         }
     </style>
-
 </head>
 
 <body>
@@ -67,9 +66,7 @@
 
     <input type="number" id="radius" placeholder="Enter Radius">
 
-    <button onclick="calculateCircle()">
-        Calculate Area
-    </button>
+    <button onclick="calculateCircle()">Calculate Area</button>
 
     <p id="result"></p>
 
@@ -91,7 +88,7 @@
     </div>
 
     <script>
-        // Circle Area
+        // Circle calculator
         function calculateCircle() {
             let r = Number(document.getElementById("radius").value);
             let area = Math.PI * r * r;
@@ -100,7 +97,7 @@
                 "Area = " + area.toFixed(2);
         }
 
-        // Calculator
+        // Calculator helper
         function getValues() {
             let a = Number(document.getElementById("num1").value);
             let b = Number(document.getElementById("num2").value);
@@ -129,5 +126,4 @@
     </script>
 
 </body>
-
 </html>
