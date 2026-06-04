@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Circle Area Calculator</title>
+    <title>Circle Area Calculator + Simple Calculator</title>
 
     <style>
         body {
@@ -21,6 +21,7 @@
             font-size: 16px;
             border-radius: 8px;
             border: 1px solid #ccc;
+            margin: 5px;
         }
 
         button {
@@ -31,7 +32,7 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            margin-left: 10px;
+            margin: 5px;
         }
 
         button:hover {
@@ -44,32 +45,86 @@
             color: green;
             font-weight: bold;
         }
+
+        #calcResult {
+            font-size: 22px;
+            margin-top: 15px;
+            color: purple;
+            font-weight: bold;
+        }
+
+        .box {
+            margin-top: 40px;
+        }
     </style>
 
 </head>
 
 <body>
 
+    <!-- 🌐 Circle Area Calculator -->
     <h1>Circle Area Calculator</h1>
 
     <input type="number" id="radius" placeholder="Enter Radius">
 
-    <button onclick="calculate()">
-        Calculate
+    <button onclick="calculateCircle()">
+        Calculate Area
     </button>
 
     <p id="result"></p>
 
+    <!-- ➕ Simple Calculator -->
+    <div class="box">
+        <h1>Simple Calculator</h1>
+
+        <input type="number" id="num1" placeholder="First Number">
+        <input type="number" id="num2" placeholder="Second Number">
+
+        <br>
+
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button>
+
+        <p id="calcResult"></p>
+    </div>
+
     <script>
-        function calculate() {
-
+        // Circle Area
+        function calculateCircle() {
             let r = Number(document.getElementById("radius").value);
-
-            let area = 3.14159 * r * r;
+            let area = Math.PI * r * r;
 
             document.getElementById("result").innerHTML =
                 "Area = " + area.toFixed(2);
+        }
 
+        // Calculator
+        function getValues() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            return [a, b];
+        }
+
+        function add() {
+            let [a, b] = getValues();
+            document.getElementById("calcResult").innerHTML = a + b;
+        }
+
+        function sub() {
+            let [a, b] = getValues();
+            document.getElementById("calcResult").innerHTML = a - b;
+        }
+
+        function mul() {
+            let [a, b] = getValues();
+            document.getElementById("calcResult").innerHTML = a * b;
+        }
+
+        function div() {
+            let [a, b] = getValues();
+            document.getElementById("calcResult").innerHTML = a / b;
         }
     </script>
 
